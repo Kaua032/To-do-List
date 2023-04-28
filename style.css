@@ -93,3 +93,23 @@ h2{
     border-radius: 10px 0px 0px 10px;
     height: 100%;
 }
+
+@media (max-width: 470px){
+    main{
+        width: 75%;
+    }
+    header{
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 5px;
+    }
+    header input{
+        width: 50%;
+    }
+    header div{
+        width: 50%;
+    }
+    header div input{
+        width: 80%;
+    }
+}
