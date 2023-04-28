@@ -19,13 +19,13 @@ main{
     width: 370px;
     box-shadow: 2px 2px 10px rgb(174, 174, 174);
     border-radius: 10px;
-    padding: 15px;
+    padding: 30px;
     gap: 15px;
 }
 header{
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
 }
 header div{
     display: flex;
@@ -44,11 +44,17 @@ header button{
     background-color: #0658ff;
     color: white;
     border-radius: 5px;
+    cursor: pointer;
 }
 h2{
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     color: #393939;
+}
+#to-do{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 .card-task{
     display: flex;
@@ -84,12 +90,6 @@ h2{
 .color-to-do{
     width: 8px;
     background-color: red;
-    border-radius: 10px 0px 0px 10px;
-    height: 100%;
-}
-.color-done{
-    width: 8px;
-    background-color: green;
     border-radius: 10px 0px 0px 10px;
     height: 100%;
 }
