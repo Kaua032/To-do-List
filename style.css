@@ -93,7 +93,14 @@ h2{
     border-radius: 10px 0px 0px 10px;
     height: 100%;
 }
-
+#to-do-nothing{
+    width: 100px;
+    margin: auto;
+}
+#thereNothing{
+    font-family: 'Poppins', sans-serif;
+    margin: auto;
+}
 @media (max-width: 470px){
     main{
         width: 75%;

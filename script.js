@@ -1,8 +1,7 @@
 let btnAdd = document.getElementById("btn-add")
 let inputAdd = document.getElementById("input-to-do")
 let listToDo = document.getElementById("to-do")
-
-let tasks = new Object()
+let inputSearch = document.getElementById("search")
 
 if(localStorage.getItem("keys") < 1){
     localStorage.setItem("keys", 1)
@@ -14,7 +13,7 @@ function Write(){
     for(let i = 1; i <= localStorage.getItem("keys"); i++){
         if(localStorage.getItem(i)){
             listToDo.innerHTML += `
-            <div class="card-task" >
+            <div class="card-task" id="${j}-${localStorage.getItem(i)}">
                 <div class="color-to-do" id="bgColor-${i}"></div>
                 <input id="${i}" class="checkbox-${i}" onclick="Done(this.id)" type="checkbox">
                 <p>${j} - <p id="paragraf-${i}">${localStorage.getItem(i)}</p></p>
@@ -35,7 +34,7 @@ btnAdd.addEventListener("click", () =>{
         for(let i = 1; i <= localStorage.getItem("keys"); i++){
             if(localStorage.getItem(i)){
                 listToDo.innerHTML += `
-                <div class="card-task" >
+                <div class="card-task" id="${j}-${localStorage.getItem(i)}">
                     <div class="color-to-do" id="bgColor-${i}"></div>
                     <input id="${i}" class="checkbox-${i}" onclick="Done(this.id)" type="checkbox">
                     <p>${j} - <p id="paragraf-${i}">${localStorage.getItem(i)}</p></p>
@@ -69,3 +68,15 @@ function Done(id){
         BgcolorLeft.style.backgroundColor = "red"
     }
 }
+
+inputSearch.addEventListener("change", () =>{
+    for(let i = 1; i < localStorage.getItem("keys"); i++){
+        let titleId = `${i}-${localStorage.getItem(i)}`
+        if(titleId.includes(inputSearch.value)){
+            document.getElementById(`${i}-${localStorage.getItem(i)}`).style.display = "flex"
+        }
+        else{
+            document.getElementById(`${i}-${localStorage.getItem(i)}`).style.display = "none"
+        }
+    }
+})
